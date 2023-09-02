@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Todo | App</title>
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Todo | App</h1>
+    </header>
+    <section>
+      <form action="/create" id="taks" method="POST">
+        <!-- <div class="description"> -->
+          <label for="description" class="form-label">Description</label>
+          <input type="text" name="description"  required/>
+        <!-- </div> -->
+        <br />
+        <div class="info">
+          <input type="date" name="date" required/>
+          <label for="category" class="form-label">Category</label>
+          <select
+            class="form-select form-select-md mb-3"
+            name="category"
+            aria-label=".form-select-md example "
+            required
+          >
+            <option value="" selected disabled>Choose a category</option>
+            <option value="Personal">Personal</option>
+            <option value="Work">Work</option>
+            <option value="School">School</option>
+            <option value="College">College</option>
+            <option value="Office">Office</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <input type="submit" name="Tasks" value="Tasks" />
+        <input type="submit" name="Delete" value="Delete Tasks" />
+      </form>
+      
+    </section>
+  </body>
+</html>
