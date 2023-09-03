@@ -1,6 +1,20 @@
 <html>
   <head>
     <title>Todo | App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="/css/home.css" />
   </head>
   <body>
@@ -10,12 +24,12 @@
     <section>
       <form action="/create" id="taks" method="POST">
         <!-- <div class="description"> -->
-          <label for="description" class="form-label">Description</label>
-          <input type="text" name="description"  required/>
+        <label for="description" class="form-label">Description</label>
+        <input type="text" name="description" required />
         <!-- </div> -->
         <br />
         <div class="info">
-          <input type="date" name="date" required/>
+          <input type="date" name="date" required />
           <label for="category" class="form-label">Category</label>
           <select
             class="form-select form-select-md mb-3"
@@ -32,11 +46,36 @@
             <option value="Other">Other</option>
           </select>
         </div>
+        <button
+          class="btn btn-secondary"
+          type="submit"
+          name="Tasks"
+          value="Tasks"
+        >
+          <i class="bi bi-plus-lg me-3 fw-bolder"></i>ADD TASK
+        </button>
 
-        <input type="submit" name="Tasks" value="Tasks" />
-        <input type="submit" name="Delete" value="Delete Tasks" />
+        <button id="delete-button" class="btn btn-danger">
+          <i class="bi bi-trash me-3 fw-bolder"></i>Delete Tasks
+        </button>
+        
       </form>
-      
+
+      <!-- fetching the todos from the databse  -->
+      <div class="fetching">
+        <ul>
+          <% for (const todo of todos) { %>
+          <li>
+            <p><%= todo.description %></p>
+            <p><%= todo.category %></p>
+             
+          </li>
+          <a href="/delete-todo/?id=<%= todo._id %>">
+            <i class="fa-solid fa-trash-can"></i>
+          </a>
+          <% } %>
+        </ul>
+      </div>
     </section>
   </body>
 </html>

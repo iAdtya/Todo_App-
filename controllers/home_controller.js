@@ -1,18 +1,16 @@
 const Todo = require("../models/user");
 
 module.exports.tasks = async function (req, res) {
+  try {
+  let todos = await Todo.find().select('-updatedAt -createdAt -__v').sort({_id:-1});
   res.status(200).render("home", {
     title: "Home",
+    todos:todos
   });
-  // try{
-  //   let todos = await Todo.find({});
-  //   res.render('index',{
-  //     tasks:todos
-  //   });
-  // }catch(err){
-  //   console.log("Error in rendering home page", err);
-  //   return res.status(500).send("Internal Server Error");
-  // }
+  }catch(err){
+    console.log("Error in rendering home page", err);
+    return res.status(500).send("Internal Server Error");
+  }
 };    
 
 module.exports.create = async function (req, res) {
@@ -30,3 +28,21 @@ module.exports.create = async function (req, res) {
     
   }
 };
+
+module.exports.delete = async function (req, res) {
+
+  // console.log(req.query);
+  const taskId = req.query.id;
+  const result = await Todo.findByIdAndDelete(taskId);
+    try{
+      if(result){
+        console.log("Todo deleted successfully");
+        return res.redirect("back");
+      }else{
+        return res.status(404).send("Not Found");
+      }
+    }catch(err){
+      console.log("Error in deleting a todo", err);
+      return res.status(500).send("Internal Server Error");
+    }
+} 
