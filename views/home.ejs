@@ -18,37 +18,52 @@
     <link rel="stylesheet" href="/css/home.css" />
   </head>
   <body>
-    <header>
-      <h1>Todo | App</h1>
-    </header>
     <section>
+      <header>
+        <h1>Todo | App</h1>
+      </header>
+      <hr />
       <form action="/create" id="taks" method="POST">
         <div class="description-box">
-        <p for="description" class="form-label">Description</p>
-        <input type="text" name="description" class="description" required placeholder="What do you need to todo" />
-        </div>
-        <br />
-        <div class="info">
-          <input type="date" name="date" required />
-          <label for="category" class="form-label">Category</label>
-          <select
-            class="form-select form-select-md mb-3"
-            name="category"
-            aria-label=".form-select-md example "
-            required
+          <label id="label" for="description" class="form-label"
+            >Description</label
           >
-            <option value="" selected disabled>Choose a category</option>
-            <option value="Personal">Personal</option>
-            <option value="Work">Work</option>
-            <option value="School">School</option>
-            <option value="College">College</option>
-            <option value="Office">Office</option>
-            <option value="Other">Other</option>
-          </select>
+          <input
+            type="text"
+            name="description"
+            class="description"
+            required
+            placeholder="What do you need to todo?"
+          />
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <div id="category" class="mb-3">
+              <label for="category" class="form-label">Category</label>
+              <select class="form-select form-select-md mb-3" name="category"
+                aria-label=".form-select-md example " required>
+                <option value="" selected disabled>Choose a category</option>
+                <option value="Personal">Personal</option>
+                <option value="Work">Work</option>
+                <option value="School">School</option>
+                <option value="College">College</option>
+                <option value="Office">Office</option>
+                <option value="Other">Other</option>
+              </select>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="date" class="form-label ">Date</label>
+              <input type="date" class="form-control" id="date" name="date" aria-describedby="date" required>
+            </div>
+          </div>
         </div>
 
         <!-- buttons -->
-        <div class="modal-footer d-flex justify-content-center"></div>
+        <div class="modal-footer d-flex justify-content-center">
         <button
           id="add-button"
           class="btn btn-secondary"
@@ -62,7 +77,8 @@
       <button id="delete-button" class="btn btn-danger">
         <i class="bi bi-trash me-3 fw-bolder"></i>Delete Tasks
       </button>
-
+    </div>
+    <hr>
       <!-- fetching the todos from the databse  -->
       <div class="row d-flex justify-content-center">
         <div class="col-md-8">
@@ -71,7 +87,7 @@
             : 'rgb(23, 162, 184)' , 'School' : 'rgb(255, 193, 7)' , 'College' :
             'rgb(108, 117, 125)' , 'Office' : 'rgb(40, 167, 69)' }; %> <% if
             (todos.length> 0) { %>
-            <h1 id="Todos-list" class="text-center">Todos</h1>
+            <h1 id="Todos-list">Todos</h1>
             <% for (const todo of todos) { %>
             <div class="d-flex justify-content-between">
               <div class="form-check d-flex align-items-center">

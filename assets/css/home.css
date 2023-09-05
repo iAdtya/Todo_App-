@@ -6,6 +6,9 @@ body {
 body::-webkit-scrollbar{
   display: none;
 }
+header{
+  margin-top: 50px;
+}
 h1 {
   text-align: center;
   margin-top: 10px;
@@ -17,23 +20,27 @@ section {
   margin: 10vh auto;
   background-color: aquamarine;
 }
-.form-label{
+#label{
   display: flex;
   flex-direction: column;
-  margin: 10px 85px;
+  margin: 0px 100px;
 }
 .description-box{
-  margin-top: 100px;
-  width: 80%;
-  height: 60px;
+  width: 100%;
 }
 .description{
   border-radius: 20px;
-  width: 100%;
+  width: 80%;
   height: 60px;
   margin: 10px 85px ;
 }
-/* #add-button{ 
+.info{ 
+  margin: 10px 100px ;
   display: flex;
-  justify-content: center;
-} */
+}
+#category{
+  margin-left: 100px;
+}
+#date{
+  width: 326px;
+}
