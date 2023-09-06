@@ -1,6 +1,6 @@
-# Todo-App-Nodejs-Coding-Ninjas  🚀
+# Todo-App-Nodejs
 ## ⭐ Introduction
-Todo App  which built using Nodejs, Ejs , CSS , JavaScript , Bootstrap .It is responsive across all devices.
+Todo App which built using Nodejs, Ejs , JavaScript , Bootstrap 
 <br/>
 <br/>
 ## Features 
@@ -17,24 +17,16 @@ Todo App  which built using Nodejs, Ejs , CSS , JavaScript , Bootstrap .It is re
 ```
 
 ## Packages Install
-- dotenv<br/>
 - ejs<br/>
 - express<br/>
 - mongoose<br/>
-- nodemon<br/>
-- body-parser<br/>
-
 <br/>
 
 ## 💻  Screen
 
 ### Todo App Nodejs
 
-![Screenshot (72)](https://github.com/ajaykumar2pp/Todo-App-Nodejs-Coding-Ninjas/assets/102378038/c35941ff-01e1-467b-b4a8-cbdf2782de70)
-
+![Screenshot (72)](https://ibb.co/L8V6Fqz)
 ### Add Todo Item
-![Screenshot (71)](https://github.com/ajaykumar2pp/Todo-App-Nodejs-Coding-Ninjas/assets/102378038/86f06b4f-50cd-437f-b97c-64ef767505fa)
+![Screenshot (71)]( https://ibb.co/jkt8Hf3)
 
-### Delete Todo Item
-
-![Screenshot (71)](https://github.com/ajaykumar2pp/Todo-App-Nodejs-Coding-Ninjas/assets/102378038/f82caf82-b3eb-4641-ad23-1797585ee1ef)
